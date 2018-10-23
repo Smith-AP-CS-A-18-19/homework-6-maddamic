@@ -1,23 +1,43 @@
+// Michael Maddalon
+
 public class Homework6 {
+
+private String string;
+private int intA;
+private int intB;
+private int intC;
 
 	/* Finish the constructor and create any necessary instance
 	 * variables
 	 */
 	public Homework6(String s, int a, int b, int c) {
-
+		string = s;
+		intA = a;
+		intB = b;
+		intC = c;
 	}
 
 	/* Return true if the stored String comes before the provided
 	 * String lexicographically, return false if it does not
 	 */
-	public boolen isBefore(String other) {
-
+	public boolean isBefore(String other) {
+		if (string.compareTo(other) > 0) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/* Return the maximum of the stored integers
 	 */
 	public int max() {
-
+		if (intA > intB && intA > intC) {
+			return intA;
+		}	if (intB > intA && intB > intC) {
+			return intB;
+		} else {
+			return intC;
+		}
 	}
 
 	/* Return the middle value of the stored integers. If two numbers
@@ -26,7 +46,51 @@ public class Homework6 {
 	 * to receive full credit
 	 */
 	public int mid() {
-
+		if (max() == intA && intA > intB && intA > intC) {
+			if (intB > intC) {
+		 		return intB;
+		 	} else {
+		 		return intC;
+		 	}
+		}
+		else if (max() == intB && intB > intA && intB > intC) {
+			if (intA > intC) {
+				return intA;
+			} else {
+				return intC;
+			}
+		}
+		else if (max() == intC && intC > intA && intC > intB) {
+			if (intA > intB) {
+				return intA;
+			} else {
+				return intB;
+			}
+		}
+		else if (intA == intB) {
+			if (max() == intA) {
+				return intC;
+			} else {
+				return intA;
+			}
+		}
+		else if (intB == intC) {
+			if (max() == intC) {
+				return intA;
+			} else {
+				return intC;
+			}
+		}
+		else if (intA == intC) {
+			if (max() == intC) {
+				return intB;
+			} else {
+				return intC;
+			}
+		}
+		else {
+			return intA;
+		}
 	}
 
 	/* Return true if the stored numbers were provided in ascending
@@ -35,7 +99,11 @@ public class Homework6 {
 	 * >= or =<; instead use < or > and invert them with !
 	 */
 	public boolean isAscending() {
-
+		if (!(intA > intB && intB > intC)) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	public static void main(String[] args) {
@@ -87,5 +155,5 @@ public class Homework6 {
 
 		System.exit(exitCode);
 	}
-	
+
 }
