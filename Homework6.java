@@ -25,7 +25,7 @@ private int intC;
 		 * number if the first string comes
 		 * before
 		 */
-		if (string.compareTo(other) > 0) {
+		if (string.compareTo(other) < 0) {
 			return true;
 		} else {
 			return false;
@@ -115,7 +115,7 @@ private int intC;
 
 		Homework6 hw6 = new Homework6("Drive", 4, 5, 6);
 
-		if (hw6.isBefore("Cars")) {
+		if (!hw6.isBefore("Cars")) {
 			System.out.println("Pass 1");
 		} else {
 			System.out.println("Fail 1");
